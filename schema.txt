@@ -1,0 +1,13 @@
+CREATE TABLE BizOps.dbo.tblEmailAuth (
+	"Domain" varchar(150) NOT NULL,
+	DKIM int,
+	SPF int,
+	DMARC int,
+	ProblemInd int,
+	ProblemText varchar(500),
+	LastCheckDT datetime,
+	FreeInd int,
+	CONSTRAINT PK_tblEmailAuth PRIMARY KEY ("Domain")
+)go
+CREATE UNIQUE INDEX PK_tblEmailAuth ON BizOps.dbo.tblEmailAuth (Domain)go
+
